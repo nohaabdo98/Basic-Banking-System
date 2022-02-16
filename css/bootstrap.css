@@ -4961,18 +4961,20 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-image: url("../images/bank3.png");
-  font-family: Cursive;
+  background-image: url("../images/bank1.jpg");
+  font-family: 'Redressed', cursive;
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
-  text-shadow: 2px 2px rgb(231, 231, 231);
+  color: #fff;
+  text-shadow: 1px 1px 2px black, 0 0 2em #070707, 0 0 0.3em #070707;
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
+  font-size: 28px;
   font-weight: 200;
+  color: #fff;
+  text-shadow: 1px 1px 6px black, 0 0 2em #070707, 0 0 0.1em #070707;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;

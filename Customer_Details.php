@@ -81,6 +81,7 @@ if(isset($_POST['submit']))
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,29 +89,28 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <style type="text/css">
-    	
-		button{
-			border:none;
-			background: #d9d9d9;
-		}
-	    button:hover{
-			background-color:#777E8B;
-			transform: scale(1.1);
-			color:white;
-		}
+        button {
+            border: none;
+            background: #d9d9d9;
+        }
 
+        button:hover {
+            background-color: #777E8B;
+            transform: scale(1.1);
+            color: white;
+        }
     </style>
 </head>
 
 <body>
- 
-<?php
+
+    <?php
   include 'navbar.php';
 ?>
 
-	<div class="container">
+    <div class="container">
         <h2 class="text-center pt-4">Customer Details</h2>
-            <?php
+        <?php
                 include 'config.php';
                 $sid=$_GET['Customer_ID'];
                 $sql = "SELECT * FROM  customer where Customer_ID=$sid";
@@ -121,35 +121,35 @@ if(isset($_POST['submit']))
                 }
                 $rows=mysqli_fetch_assoc($result);
             ?>
-            <form method="post" name="tcredit" class="tabletext" ><br>
-        <div>
-            <table class="table table-striped">
-                <tr>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Name</th>
-                    <th class="text-center">E-mail</th>
-                    <th class="text-center">Balance</th>
-                </tr>
-                <tr>
-                    <td class="text-center"><?php echo $rows['Customer_ID'] ?></td>
-                    <td class="text-center"><?php echo $rows['Customer_Name'] ?></td>
-                    <td class="text-center"><?php echo $rows['Customer_Email'] ?></td>
-                    <td class="text-center"><?php echo $rows['Customer_Balance'] ?>$</td>
-                </tr>
-            </table>
-        </div>
-            
-        <br><br>
-        <hr>
-        <br>
-        <h2 class="text-center pt-4">Transfer Money</h2>
-        <br>
-        
-       <div class="col-xs-6">
-       <label>Transfer To:</label>
-        <select name="to" class="form-control" required>
-            <option value="" disabled selected>Choose</option>
-            <?php
+        <form method="post" name="tcredit" class="tabletext"><br>
+            <div>
+                <table class="table table-striped">
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">E-mail</th>
+                        <th class="text-center">Balance</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><?php echo $rows['Customer_ID'] ?></td>
+                        <td class="text-center"><?php echo $rows['Customer_Name'] ?></td>
+                        <td class="text-center"><?php echo $rows['Customer_Email'] ?></td>
+                        <td class="text-center"><?php echo $rows['Customer_Balance'] ?>$</td>
+                    </tr>
+                </table>
+            </div>
+
+            <br><br>
+            <hr>
+            <br>
+            <h2 class="text-center pt-4">Transfer Money</h2>
+            <br>
+
+            <div class="col-xs-6">
+                <label>Transfer To:</label>
+                <select name="to" class="form-control" required>
+                    <option value="" disabled selected>Choose</option>
+                    <?php
                 include 'config.php';
                 $sid=$_GET['Customer_ID'];
                 $sql = "SELECT * FROM customer where Customer_ID!=$sid";
@@ -160,36 +160,41 @@ if(isset($_POST['submit']))
                 }
                 while($rows = mysqli_fetch_assoc($result)) {
             ?>
-                <option class="table" value="<?php echo $rows['Customer_ID'];?>" >
-                
-                    <?php echo $rows['Customer_Name'] ;?> (Balance: 
-                    <?php echo $rows['Customer_Balance'] ;?>)$
-               
-                </option>
-            <?php 
+                    <option class="table" value="<?php echo $rows['Customer_ID'];?>">
+
+                        <?php echo $rows['Customer_Name'] ;?> (Balance:
+                        <?php echo $rows['Customer_Balance'] ;?>)$
+
+                    </option>
+                    <?php 
                 } 
             ?>
-            
-        </select>
-       </div>
-        
-        
-        <div class="col-xs-6">
-        <label>Amount: ($)</label>
-            <input type="number" class="form-control" name="amount" required>   
-            <br><br>
-                
-        </div>
-        <div class="text-center" >
-            <button class="btn btn-primary" name="submit" type="submit" id="myBtn">Transfer</button>
+
+                </select>
             </div>
-            </form>
+
+
+            <div class="col-xs-6">
+                <label>Amount: ($)</label>
+                <input type="number" class="form-control" name="amount" required>
+                <br><br>
+
             </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<hr />
+            <div class="text-center">
+                <button class="btn btn-primary" name="submit" type="submit" id="myBtn">Transfer</button>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <hr />
         <footer class="container-fluid text-center">
-        <p>&copy;2022 - Noha Abdalslam</p>
-</footer>
+            <p>&copy;Basic Banking System - Noha Abdalslam #GRIPFEBRUARY22 </p>
+            <p>The Sparks Foundation, Task1 Web Development</p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
