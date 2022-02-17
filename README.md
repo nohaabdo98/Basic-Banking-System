@@ -35,7 +35,7 @@ In addition to skills-specific tasks, they encourage interns to build a credible
 #GRIPFEBRUARY22 #thesparkfoundation 
 
 # Task Video:
-- Link : 
+- Link : https://www.linkedin.com/posts/noha-abdalslam-846977204_gripfebruary22-gripfebruary2022-thesparkfoundation-activity-6900210182878822400--tCO
 
 # About Me:
 Name: Noha Abdalslam
